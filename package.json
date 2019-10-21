@@ -1,0 +1,26 @@
+{
+  "name": "goblin-nabu-store",
+  "version": "0.0.1",
+  "description": "Goblin Nabu Store",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "lib/summaries.js",
+  "author": "",
+  "license": "MIT",
+  "config": {
+    "xcraft": {
+      "commands": true
+    }
+  },
+  "dependencies": {
+    "goblin-workshop": "^0.0.1",
+    "xcraft-core-goblin": "^3.0.0"
+  },
+  "devDependencies": {
+    "prettier": "1.18.2",
+    "xcraft-dev-prettier": "^1.0.0",
+    "xcraft-dev-rules": "^1.0.2"
+  },
+  "prettier": "xcraft-dev-prettier"
+}
