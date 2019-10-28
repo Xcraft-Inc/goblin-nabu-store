@@ -2,7 +2,7 @@
 import React from 'react';
 import Widget from 'laboratory/widget';
 
-import TextFieldCombo from 'gadgets/text-field-combo/widget';
+import TextFieldCombo from 'goblin-gadgets/widgets/text-field-combo/widget';
 import C from 'goblin-laboratory/widgets/connect-helpers/c';
 
 const {GlyphHelpers} = require('goblin-toolbox');
@@ -27,7 +27,7 @@ class HeaderCombo extends Widget {
     return (
       <TextFieldCombo
         selectedId={C(`.columns[${index}].field`)}
-        readonly="true"
+        restrictsToList="true"
         grow="1"
         list={localesList}
         menuType="wrap"
