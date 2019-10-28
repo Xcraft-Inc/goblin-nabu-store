@@ -1,6 +1,5 @@
 //T:2019-02-27
 import React from 'react';
-import Widget from 'laboratory/widget';
 
 import T from 't';
 import Label from 'gadgets/label/widget';
