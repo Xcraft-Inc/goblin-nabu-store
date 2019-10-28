@@ -90,9 +90,9 @@ const config = {
     yield quest.me.setNeedTranslation();
   },
   quests: {
-    openSingleEntity: function(quest, entityId) {
-      const toolbarApi = quest.getAPI(getToolbarId(quest.me.id));
-      toolbarApi.openSingleEntity({entityId});
+    openSingleEntity: function(quest, entityId, navigate) {
+      const toolbarId = getToolbarId(quest.goblin.getX('desktopId'));
+      quest.evt(`${toolbarId}.edit-message-requested`, {entityId, navigate});
     },
     changeSelectedLocale: function*(quest, index, locale, next) {
       const currentLocale = quest.goblin
