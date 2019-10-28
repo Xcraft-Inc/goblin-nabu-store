@@ -3,9 +3,9 @@ import React from 'react';
 
 import T from 't';
 import {InfoLabel} from './labels';
-import TranslationFieldConnected from 'nabu/translation-field/widget';
-import HighlightLabel from 'nabu/highlight-label/widget';
-import Button from 'gadgets/button/widget';
+import TranslationFieldConnected from 'goblin-nabu/widgets/translation-field/widget';
+import HighlightLabel from 'goblin-nabu/widgets/highlight-label/widget';
+import Button from 'goblin-gadgets/widgets/button/widget';
 const {computeTranslationId} = require('goblin-nabu/lib/helpers.js');
 
 // ------------------------------------------------------------
