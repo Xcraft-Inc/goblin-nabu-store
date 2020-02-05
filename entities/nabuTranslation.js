@@ -1,18 +1,46 @@
 'use strict';
 const {buildEntity} = require('goblin-workshop');
 
+/******************************************************************************/
+
 const entity = {
   type: 'nabuTranslation',
+
   references: {
     messageId: 'nabuMessage',
   },
+
   newEntityStatus: 'draft',
+
   cache: 0,
+
+  properties: {
+    messageId: {
+      type: 'entityId',
+      defaultValue: null,
+    },
+    locale: {
+      type: 'string',
+      defaultValue: '',
+    },
+    text: {
+      type: 'string',
+      defaultValue: '',
+    },
+  },
+
+  summaries: {
+    info: {type: 'string', defaultValue: ''},
+    description: {type: 'string', defaultValue: ''},
+    localeName: {type: 'string', defaultValue: ''},
+  },
+
   buildSummaries: function(quest, nabuTranslation, peers, MD) {
     const ref = nabuTranslation.get('text', '');
     const localeName = nabuTranslation.get('locale');
     return {info: ref, description: ref, localeName};
   },
+
   indexer: function(quest, nabuTranslation) {
     const info = nabuTranslation.get('meta.summaries.description', '');
     const messageId = nabuTranslation.get('messageId');
@@ -25,6 +53,7 @@ const entity = {
 
     return result;
   },
+
   onNew: function(quest, id, messageId, locale, text) {
     return {
       id: id,
@@ -34,6 +63,8 @@ const entity = {
     };
   },
 };
+
+/******************************************************************************/
 
 module.exports = {
   entity,
