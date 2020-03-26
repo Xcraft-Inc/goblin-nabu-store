@@ -27,8 +27,8 @@ function renderMissingTranslationsRowCell(id, datagridId) {
 function renderNabuIdRowCell(id, datagridId) {
   return (
     <div style={{display: 'flex'}}>
-      <HighlightLabel id={id} datagridId={datagridId} underline="false" />
-      <InfoLabel id={id} checkDescription="true" horizontalSpacing="overlap" />
+      <HighlightLabel id={id} datagridId={datagridId} underline={false} />
+      <InfoLabel id={id} checkDescription={true} horizontalSpacing="overlap" />
     </div>
   );
 }

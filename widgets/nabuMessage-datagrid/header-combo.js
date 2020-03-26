@@ -27,7 +27,7 @@ class HeaderCombo extends Widget {
     return (
       <TextFieldCombo
         selectedId={C(`.columns[${index}].field`)}
-        restrictsToList="true"
+        restrictsToList={true}
         grow="1"
         list={localesList}
         menuType="wrap"
