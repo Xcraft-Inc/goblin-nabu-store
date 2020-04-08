@@ -11,7 +11,7 @@ if (nabuConfig.storageAvailable) {
    *
    * @returns {Object} The list and definitions of commands.
    */
-  exports.xcraftCommands = function() {
+  exports.xcraftCommands = function () {
     return buildHinter({
       type: 'nabuMessage',
       subTypes: ['nabuTranslation'],
