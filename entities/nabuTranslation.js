@@ -35,13 +35,13 @@ const entity = {
     localeName: {type: 'string', defaultValue: ''},
   },
 
-  buildSummaries: function(quest, nabuTranslation, peers, MD) {
+  buildSummaries: function (quest, nabuTranslation, peers, MD) {
     const ref = nabuTranslation.get('text', '');
     const localeName = nabuTranslation.get('locale');
     return {info: ref, description: ref, localeName};
   },
 
-  indexer: function(quest, nabuTranslation) {
+  indexer: function (quest, nabuTranslation) {
     const info = nabuTranslation.get('meta.summaries.description', '');
     const messageId = nabuTranslation.get('messageId');
 
@@ -54,7 +54,7 @@ const entity = {
     return result;
   },
 
-  onNew: function(quest, id, messageId, locale, text) {
+  onNew: function (quest, id, messageId, locale, text) {
     return {
       id: id,
       messageId,

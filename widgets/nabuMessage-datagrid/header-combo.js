@@ -11,7 +11,7 @@ class HeaderCombo extends Widget {
   render() {
     const {locales, index, hasTranslation, doAsDatagrid} = this.props;
     const localesList = locales
-      .map(l => {
+      .map((l) => {
         const localName = l.get('name');
         return {
           id: localName,
@@ -32,7 +32,7 @@ class HeaderCombo extends Widget {
         list={localesList}
         menuType="wrap"
         comboTextTransform="none"
-        onChange={locale => {
+        onChange={(locale) => {
           doAsDatagrid('changeSelectedLocale', {index, locale});
         }}
         onShowCombo={() => {

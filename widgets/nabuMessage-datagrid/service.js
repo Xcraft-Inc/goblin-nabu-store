@@ -58,7 +58,7 @@ const config = {
     fields: ['info'],
     title: T('Messages'),
   },
-  afterCreate: function*(quest, next) {
+  afterCreate: function* (quest, next) {
     // Setting correct selected locales
     const locales = (yield quest.warehouse.get({path: 'nabu'})).get('locales');
 
@@ -90,11 +90,11 @@ const config = {
     yield quest.me.setNeedTranslation();
   },
   quests: {
-    openSingleEntity: function(quest, entityId, navigate) {
+    openSingleEntity: function (quest, entityId, navigate) {
       const toolbarId = getToolbarId(quest.goblin.getX('desktopId'));
       quest.evt(`${toolbarId}.edit-message-requested`, {entityId, navigate});
     },
-    changeSelectedLocale: function*(quest, index, locale, next) {
+    changeSelectedLocale: function* (quest, index, locale, next) {
       const currentLocale = quest.goblin
         .getState()
         .get(`columns[${index}].field`);
@@ -116,7 +116,7 @@ const config = {
 
       yield quest.me.setNeedTranslation();
     },
-    applyElasticVisualization: function*(quest, value, sort, next) {
+    applyElasticVisualization: function* (quest, value, sort, next) {
       if (value === undefined) {
         yield quest.me.toggleSort({field: sort}, next);
         return;
@@ -134,20 +134,17 @@ const config = {
 
       yield quest.me.changeData();
     },
-    setNeedTranslation: function*(quest) {
-      const getNrTranslaton = watt(function*() {
+    setNeedTranslation: function* (quest) {
+      const getNrTranslaton = watt(function* () {
         const getTranslationQuery = (r, localeName) => {
-          return r.table('nabuTranslation').filter(
-            r
-              .row('locale')
-              .match(localeName)
-              .and(
-                r
-                  .row('text')
-                  .match('.')
-                  .not()
-              )
-          );
+          return r
+            .table('nabuTranslation')
+            .filter(
+              r
+                .row('locale')
+                .match(localeName)
+                .and(r.row('text').match('.').not())
+            );
         };
 
         const r = quest.getStorage('rethink');

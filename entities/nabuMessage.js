@@ -30,19 +30,19 @@ const entity = {
     description: {type: 'string', defaultValue: ''},
   },
 
-  buildSummaries: function(quest, nabuMessage) {
+  buildSummaries: function (quest, nabuMessage) {
     const ref = nabuMessage.get('nabuId', '');
     return {info: ref, description: ref};
   },
 
-  indexer: function(quest, entity) {
+  indexer: function (quest, entity) {
     const info = entity.get('meta.summaries.description', '');
     return {info, value: info.toLowerCase()};
   },
 
   quests: {},
 
-  onNew: function(quest, id, nabuId, custom, sources) {
+  onNew: function (quest, id, nabuId, custom, sources) {
     return {
       id: id,
       nabuId: nabuId || '',

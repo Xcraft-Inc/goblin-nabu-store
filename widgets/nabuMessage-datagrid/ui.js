@@ -37,7 +37,7 @@ function renderHinterRow(doAsDatagrid) {
       model=".searchValue"
       grow="1"
       labelGlyph="solid/search"
-      onChange={value => doAsDatagrid('applyElasticVisualization', {value})}
+      onChange={(value) => doAsDatagrid('applyElasticVisualization', {value})}
       hintText={T('Search message or translation')}
       width="95%"
       verticalSpacing="5px"
