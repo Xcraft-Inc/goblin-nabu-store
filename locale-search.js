@@ -11,7 +11,7 @@ const config = {
   list: 'locale',
   hinters: {
     locale: {
-      onValidate: function* (quest, selection) {
+      onValidate: function* (quest, selection, currentLocation) {
         const desk = quest.getAPI(quest.goblin.getX('desktopId'));
         const locale = yield quest.me.getEntity({
           entityId: selection.value,
@@ -29,6 +29,7 @@ const config = {
             },
           },
           navigate: true,
+          currentLocation,
         });
       },
     },
