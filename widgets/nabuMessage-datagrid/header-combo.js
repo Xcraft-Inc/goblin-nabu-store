@@ -5,8 +5,6 @@ import Widget from 'laboratory/widget';
 import TextFieldCombo from 'goblin-gadgets/widgets/text-field-combo/widget';
 import C from 'goblin-laboratory/widgets/connect-helpers/c';
 
-const {GlyphHelpers} = require('goblin-toolbox');
-
 class HeaderCombo extends Widget {
   render() {
     const {locales, index, hasTranslation, doAsDatagrid} = this.props;
