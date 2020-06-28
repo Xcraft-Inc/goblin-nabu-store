@@ -18,7 +18,7 @@ class HeaderCombo extends Widget {
           text: localName,
           glyph:
             hasTranslation && hasTranslation.get(`${localName}`)
-              ? GlyphHelpers.getComboGlyph('desk', 'warning')
+              ? 'solid/exclamation-triangle'
               : '',
         };
       })
