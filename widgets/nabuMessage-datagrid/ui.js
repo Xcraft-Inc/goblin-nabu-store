@@ -1,7 +1,7 @@
 //T:2019-02-27
 import React from 'react';
 
-import LabelTextField from 'gadgets/label-text-field/widget';
+import LabelTextField from 'goblin-gadgets/widgets/label-text-field/widget';
 
 import T from 't';
 import {SortLabel} from './labels';

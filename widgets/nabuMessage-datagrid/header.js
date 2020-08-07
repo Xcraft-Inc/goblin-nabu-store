@@ -2,7 +2,7 @@
 import React from 'react';
 
 import T from 't';
-import Label from 'gadgets/label/widget';
+import Label from 'goblin-gadgets/widgets/label/widget';
 import HeaderComboConnected from './header-combo';
 
 // ------------------------------------------------------------
