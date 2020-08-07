@@ -1,5 +1,5 @@
 //T:2019-02-27
-import Widget from 'laboratory/widget';
+import Widget from 'goblin-laboratory/widgets/widget';
 import Label from 'goblin-gadgets/widgets/label/widget';
 const {computeTranslationId} = require('goblin-nabu/lib/helpers.js');
 
