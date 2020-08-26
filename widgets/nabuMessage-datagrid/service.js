@@ -139,11 +139,10 @@ const config = {
         const getTranslationQuery = (r, localeName) => {
           return r
             .table('nabuTranslation')
-            .filter(
-              r
-                .row('locale')
+            .filter((translation) =>
+              translation('locale')
                 .match(localeName)
-                .and(r.row('text').match('.').not())
+                .and(translation('text').match('.').not())
             );
         };
 
