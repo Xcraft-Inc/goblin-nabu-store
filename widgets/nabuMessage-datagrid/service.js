@@ -159,11 +159,7 @@ const config = {
           const locale = locales.get(i);
 
           const args = [locale.get('name')];
-          const cursor = yield r.query({query, args});
-
-          const {CursorPump} = require('xcraft-core-utils');
-          const p = new CursorPump(cursor);
-          const localTranslation = yield p.toArray();
+          const localTranslation = yield r.query({query, args});
 
           let value = false;
           if (localTranslation.length > 0) {
