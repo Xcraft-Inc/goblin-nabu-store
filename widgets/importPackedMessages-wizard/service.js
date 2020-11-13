@@ -11,7 +11,8 @@ const config = {
   },
 
   steps: {
-    options: {
+    selectFilePath: {
+      form: {filePath: null},
       updateButtonsMode: 'onChange',
       buttons: function (quest, buttons, form) {
         const filePath = form.get('filePath', null);
@@ -23,19 +24,29 @@ const config = {
           disabled,
         });
       },
-      form: {filePath: null},
     },
-    importMessages: {
-      form: {},
+    showImportedMessages: {
+      form: {imported: false, importedMessages: 0, importedTranslations: 0},
+      buttons: function (quest, buttons) {
+        return buttons.set('main', {
+          glyph: 'solid/arrow-right',
+          text: `Terminer`,
+          grow: '2',
+        });
+      },
       quest: function* (quest, form) {
         const nabuAPI = quest.getAPI('nabu');
 
-        yield nabuAPI.importPackedMessages({
+        const result = yield nabuAPI.importPackedMessages({
           desktopId: quest.getDesktop(),
           ownerId: quest.me.id,
           packFilePath: form.filePath,
-        });
-        yield quest.me.next();
+        }) || {
+          importedMessages: 0,
+          importedTranslations: 0,
+        };
+
+        quest.do({form: {imported: true, ...result}});
       },
     },
     finish: {

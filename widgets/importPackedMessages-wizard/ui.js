@@ -3,23 +3,33 @@ import React from 'react';
 import T from 't';
 import Container from 'goblin-gadgets/widgets/container/widget';
 import Label from 'goblin-gadgets/widgets/label/widget';
-import Separator from 'goblin-gadgets/widgets/separator/widget';
+import FileInput from 'goblin-gadgets/widgets/file-input/widget';
 import Field from 'goblin-gadgets/widgets/field/widget';
 
-function options(props) {
+function selectFilePath(props) {
   return (
-    <Container kind="column" grow="1">
-      <Container kind="row" grow="1">
-        <Field model=".form.filePath" />
-      </Container>
+    <Container kind="panes" grow="1">
+      <Label text={T('Sélectionnez le fichier à importer.')} />
+      <FileInput accept=".json" model=".form.filePath" />
     </Container>
   );
 }
 
-function importMessages(props) {
+function showImportedMessages(props) {
   return (
-    <Container kind="column" grow="1">
-      Importing...
+    <Container kind="panes" grow="1">
+      <Field
+        kind="label"
+        grow="1"
+        labelText={T('Number of imported messages')}
+        model=".form.importedMessages"
+      />
+      <Field
+        kind="label"
+        grow="1"
+        labelText={T('Number of imported translations')}
+        model=".form.importedTranslations"
+      />
     </Container>
   );
 }
@@ -27,6 +37,6 @@ function importMessages(props) {
 /******************************************************************************/
 
 export default {
-  options,
-  importMessages,
+  selectFilePath,
+  showImportedMessages,
 };
