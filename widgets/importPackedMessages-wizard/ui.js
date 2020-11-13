@@ -8,7 +8,7 @@ import Field from 'goblin-gadgets/widgets/field/widget';
 
 function selectFilePath(props) {
   return (
-    <Container kind="panes" grow="1">
+    <Container kind="row-pane" grow="1">
       <Label text={T('Sélectionnez le fichier à importer.')} />
       <FileInput accept=".json" model=".form.filePath" />
     </Container>
@@ -17,7 +17,7 @@ function selectFilePath(props) {
 
 function showImportedMessages(props) {
   return (
-    <Container kind="panes" grow="1">
+    <Container kind="row-pane" grow="1">
       <Field
         kind="label"
         grow="1"
