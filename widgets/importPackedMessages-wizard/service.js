@@ -28,11 +28,13 @@ const config = {
     showImportedMessages: {
       form: {imported: false, importedMessages: 0, importedTranslations: 0},
       buttons: function (quest, buttons) {
-        return buttons.set('main', {
-          glyph: 'solid/arrow-right',
-          text: `Terminer`,
-          grow: '2',
-        });
+        return buttons
+          .set('main', {
+            glyph: 'solid/arrow-right',
+            text: `Terminer`,
+            grow: '2',
+          })
+          .del('cancel');
       },
       quest: function* (quest, form) {
         const nabuAPI = quest.getAPI('nabu');
@@ -48,10 +50,6 @@ const config = {
 
         quest.do({form: {imported: true, ...result}});
       },
-    },
-    finish: {
-      form: {},
-      quest: function* () {},
     },
   },
 };
