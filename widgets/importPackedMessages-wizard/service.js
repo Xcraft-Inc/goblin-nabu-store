@@ -32,7 +32,7 @@ const config = {
 
         yield nabuAPI.importPackedMessages({
           desktopId: quest.getDesktop(),
-          //ownerId,
+          ownerId: quest.me.id,
           packFilePath: form.filePath,
         });
         yield quest.me.next();
