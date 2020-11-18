@@ -28,6 +28,9 @@ if (nabuConfig.storageAvailable) {
       },
       title: T('Locales'),
       newButtonTitle: T('Nouvelle locale'),
+      onNewButtonClicked: function (quest, value, currentLocation) {
+        console.log('tralala');
+      },
     });
   };
 }
