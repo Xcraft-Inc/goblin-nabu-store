@@ -16,21 +16,18 @@ if (nabuConfig.storageAvailable) {
       type: 'locale',
       fields: ['name'],
       newWorkitem: {
-        name: 'locale-workitem',
-        newEntityType: 'locale',
+        name: 'newLocale-wizard',
         description: T('Nouvelle locale'),
         view: 'default',
         icon: 'solid/map',
         mapNewValueTo: 'name',
         kind: 'tab',
+        maxInstances: 1,
         isClosable: true,
         navigate: true,
       },
       title: T('Locales'),
       newButtonTitle: T('Nouvelle locale'),
-      onNewButtonClicked: function (quest, value, currentLocation) {
-        console.log('tralala');
-      },
     });
   };
 }
