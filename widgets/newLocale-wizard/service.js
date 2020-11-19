@@ -52,6 +52,7 @@ const config = {
             form.get('locale', null),
             form.get('sublocale', null)
           ),
+          avoidCompareLanguages: true,
         }));
 
         const disabled = invalidSublocale || invalidLocale;
