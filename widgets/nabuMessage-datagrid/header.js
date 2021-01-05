@@ -34,7 +34,7 @@ function renderHeaderCell(props) {
     case 'locale_2':
       return renderLocaleHeaderCell(props.id, props.index, props.doAsDatagrid);
     default:
-      return <div />;
+      return <></>;
   }
 }
 

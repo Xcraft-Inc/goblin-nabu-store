@@ -26,10 +26,10 @@ function renderMissingTranslationsRowCell(id, datagridId) {
 
 function renderNabuIdRowCell(id, datagridId) {
   return (
-    <div style={{display: 'flex'}}>
+    <>
       <HighlightLabel id={id} datagridId={datagridId} underline={false} />
       <InfoLabel id={id} checkDescription={true} horizontalSpacing="overlap" />
-    </div>
+    </>
   );
 }
 
@@ -45,12 +45,12 @@ function renderLocaleRowCell(id, locale, datagridId, onDrillDown) {
         msgId={id}
         labelWidth="0px"
         horizontalSpacing="compact"
-        width="200%"
+        width="100%"
       />
     );
   }
 
-  return <div />;
+  return <></>;
 }
 
 function renderOpenExternRowCell(id, doAsDatagrid) {

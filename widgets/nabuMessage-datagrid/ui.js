@@ -41,9 +41,8 @@ function renderHinterRow(doAsDatagrid) {
       throttleDelay={200}
       onChange={(value) => doAsDatagrid('applyElasticVisualization', {value})}
       hintText={T('Search message or translation')}
-      width="95%"
+      width="100%"
       verticalSpacing="5px"
-      customMarginLeft="20px"
     />
   );
 }
