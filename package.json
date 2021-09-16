@@ -15,12 +15,12 @@
   },
   "dependencies": {
     "gigawatts": "^4.0.5",
-    "goblin-nabu": "^1.0.0",
-    "goblin-workshop": "^1.0.0",
+    "goblin-nabu": "^2.0.0",
+    "goblin-workshop": "^2.0.0",
     "lodash": "^4.17.19",
-    "xcraft-core-etc": "^2.0.4",
-    "xcraft-core-goblin": "^4.0.1",
-    "xcraft-core-shredder": "^4.0.0"
+    "xcraft-core-etc": "^3.0.0",
+    "xcraft-core-goblin": "^5.0.0",
+    "xcraft-core-shredder": "^5.0.0"
   },
   "devDependencies": {
     "prettier": "2.0.4",
