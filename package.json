@@ -16,7 +16,7 @@
   "dependencies": {
     "gigawatts": "^4.0.5",
     "goblin-nabu": "^2.0.0",
-    "goblin-desktop": "^3.0.0",
+    "goblin-desktop": "^4.0.0",
     "goblin-workshop": "^3.0.0",
     "lodash": "^4.17.19",
     "xcraft-core-etc": "^3.0.0",
